@@ -5,4 +5,9 @@ class Cat
     var $name;
     var $type;
     var $fur;
+
+    function cry()
+    {
+        return 'miaou';
+    }
 }
