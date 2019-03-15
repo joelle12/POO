@@ -5,6 +5,8 @@
  * Une voiture peut rouler et klaxonner. (2 méthodes)
  */
 
+ require_once 'Car.php';
+
 $car = new Car('Renault', 'Clio');
 $car->setColor('rouge');
 
