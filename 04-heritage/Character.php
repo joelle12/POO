@@ -18,4 +18,6 @@ class Character
         // attaquant.
         $character->health -= $this->strenght;
     }
+
+    
 }
