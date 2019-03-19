@@ -44,7 +44,7 @@ CREATE TABLE `actor` (
 CREATE TABLE `movie` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
-  `synopsys` text NOT NULL,
+  `synopsis` text NOT NULL,
   `released_at` date NOT NULL,
   `category` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -1,26 +1,22 @@
 <?php
 
-class Database
-{
-    private static $pdo;
+require_once __DIR__ . '/../config/autoload.php';
 
-    public static function getInstance()
-    {
-        if (null === self::$pdo) { // On s'assure que la connexion à la BDD se fait une seule fois
-            self::$pdo = new PDO('mysql:host=mysql.docker;dbname=movies;charset=utf8', 'root', 'root', [
-                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-            ]);
-        }
+$uri = $_SERVER['PATH_INFO'] ?? '/';
 
-        return self::$pdo;
-    }
+// On teste si on est sur la page d'accueil
+if ($uri === '/') {
+    require_once __DIR__ . '/../views/home.php';
+}else if ($uri === '/acteurs') {
+    require_once __DIR__ . '/../views/actors.php';
 }
 
-// Objet
-$query1 = Database::getInstance();
-$query2 = Database::getInstance();
-$query3 = Database::getInstance();
-
-var_dump($query1);
-var_dump($query2);
-var_dump($query3);
+/**
+* Ajouter la partie Acteur :
+*
+* Etape 1 : Si la route est "/acteurs" on inclue un fichier "acteurs.php dans "views/"
+* Etape 2 : 
+*          
+* Etape 3 : 
+* Etape 4 : Créer la classe ActorManager avec une méthode findAll() qui renvoie un tableau d'instance de Actor.
+*/
